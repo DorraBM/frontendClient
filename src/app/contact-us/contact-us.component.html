@@ -1,0 +1,65 @@
+<!-- /.inner-banner -->
+<section class="inner-banner">
+    <div class="container">
+        <h2 class="inner-banner__title">Contacter-nous</h2>  
+    </div>  
+</section>
+<!-- /.contact-info-one -->
+<section class="contact-info-one">
+    <div class="container">
+        <div class="row ">
+            <div class="col-lg-4 ">
+                <div class="contact-info-one__single wow fadeInDown" data-wow-duration="1500ms">
+                    <div class="contact-info-one__icon"><i class="fas fa-mobile-alt"></i><!-- /.kipso-icon-manager -->
+                    </div><!-- /.contact-info-one__icon -->
+                    <h2 class="contact-info-one__title">APPELEZ-NOUS</h2><!-- /.contact-info-one__title -->
+                    <p class="contact-info-one__text"><a href="tel:+21694082032">+216 94 082 032</a></p><!-- /.contact-info-one__text -->
+                </div><!-- /.contact-info-one__single -->
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <div class="contact-info-one__single wow fadeInUp" data-wow-duration="1500ms">
+                    <div class="contact-info-one__icon"><i class="fas fa-map-marker-alt"></i>
+                        <!-- /.kipso-icon-manager -->
+                    </div><!-- /.contact-info-one__icon -->
+                    <h2 class="contact-info-one__title">ADRESSE</h2><!-- /.contact-info-one__title -->
+                    <p class="contact-info-one__text"><a href="https://g.page/masterclass-denden?share"> Avenue de
+                        l'indépendance 3, Société Ekhouan Ben jemiaa Denden 2011, Manouba 2011</a><!-- /.contact-info-one__text -->
+                </div><!-- /.contact-info-one__single -->
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <div class="contact-info-one__single wow fadeInDown" data-wow-duration="1500ms">
+                    <div class="contact-info-one__icon"><i class="fas fa-envelope-open-text"></i><!-- /.kipso-icon-manager -->
+                    </div><!-- /.contact-info-one__icon -->
+                    <h2 class="contact-info-one__title">ENVOIE-NOUS UN MESSAGE</h2><!-- /.contact-info-one__title -->
+                    <p class="contact-info-one__text"><a href="mailto:mailto:contact@master-class.tn">contact@master-class.tn</a>
+                    </p><!-- /.contact-info-one__text -->
+                </div><!-- /.contact-info-one__single -->
+            </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section>
+
+<!--contact form and maps-->
+<section class="contact" id="contact">
+
+    <h1 class="heading"><span>Contactez -Nous</span> </h1>
+
+    <div class="row">
+
+
+            <iframe class="map"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3194.6686750417102!2d10.110030914474098!3d36.8024935799481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd33d767779ff5%3A0xd05e651a77c912a!2sMasterClass!5e0!3m2!1sfr!2stn!4v1642666800089!5m2!1sfr!2stn" allowfullscreen="" loading="lazy"></iframe>
+  
+
+        <form action="" [formGroup]="contactForm" (ngSubmit)="onSubmit()" >
+            <h3>Entrer En Contact</h3>
+            <input type="text" placeholder="votre nom" formControlName="contactNom" class="box">
+            <input type="email" placeholder="votre e-mail" formControlName="contactMail" class="box">
+            <input type="tel" placeholder="N°Tel" formControlName="contactTel" class="box">
+            <textarea placeholder="votre message" formControlName="contactMessage" class="box" cols="30" rows="10"></textarea>
+            <input type="submit" value="send message" class="btn">
+        </form>
+
+    </div>
+
+</section>
+

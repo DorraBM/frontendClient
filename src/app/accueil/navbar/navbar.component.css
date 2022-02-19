@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+* {
+    font-family: 'Kalam', cursive;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+html {
+    overflow-x: hidden;
+    font-size: 62.5%;
+}
+
+header {
+    width: 96%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: .5rem;
+    box-shadow: 0 .3rem .5rem rgba(0, 0, 0, .3);
+    padding: .2rem 2rem;
+    transition: .2s linear;
+    z-index: 1000;
+}
+
+header .logo {
+    color: #333;
+    font-size: 3rem;
+}
+
+header .navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+header .navbar ul li {
+    margin: 0 1rem;
+}
+
+header .navbar ul li a {
+    font-size: 2rem;
+    color: #333;
+    transition: .2s linear;
+}
+
+header .navbar ul li .active,
+header .navbar ul li a:hover {
+    color: #d67f1b;
+}
+
+header .fa-bars {
+    font-size: 3rem;
+    color: #0098a1;
+    cursor: pointer;
+    display: none;
+}
+
+.home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    padding: 2rem 10rem;
+}
+
+.home .video img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.home .content {
+    margin-top: 7rem;
+}
+
+.home .content h1 {
+    font-size: 6.1vw;
+    color: #fff;
+    text-shadow: 0 .3rem .5rem #000;
+}
+
+.home .content p {
+    font-size: 1.5vw;
+    color: #eee;
+    text-shadow: 0 .3rem .5rem #000;
+    padding-left: 2rem;
+    border-left: .3rem solid #ddd;
+}
+
+
+
+
+.header__social {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-left: 90px;
+    margin-top: 5px;
+}
+
+.header__social a {
+    color: #81868a;
+    font-size: 18px;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+}
+
+.header__social a:hover {
+    transform: scale(1.2);
+}
+
+.header__social a+a {
+    margin-left: 5px;
+}

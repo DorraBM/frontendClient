@@ -1,0 +1,181 @@
+/*
+* 12. inner-banner styles
+*/
+
+.inner-banner {
+    background-color: #011928;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    background-image: url(https://images.pexels.com/photos/610293/pexels-photo-610293.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
+}
+
+.inner-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #011928;
+    opacity: 0.5;
+}
+
+.inner-banner .container {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-top: 169px;
+}
+
+.inner-banner__title {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 100px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: #fff;
+    margin-top: 5px;
+    margin-bottom: -25px;
+}
+/* ---------------------*/
+/* blogPost styles */
+
+.blogPost {
+    position: relative;
+    border-bottom: 1px solid #e8e8e8;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    margin-left: 80px;
+    margin-top: 30px;
+    width: 80%;
+    padding-left: 100px;
+}
+.blogPost  .description{
+    width: 60%;
+}
+
+.blogPost.single {
+    border-bottom: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.blogPost .aligncenter img {
+    display: block;
+    width: 60%;
+    max-width: none;
+}
+
+.blogPost .timeStamp {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: #555555;
+    background-color: #fff;
+    border: 1px solid #e8e8e8;
+    width: 60px;
+    font-size: 12px;
+    line-height: 1.25;
+    padding: 10px;
+    margin-left: 20px;
+}
+
+.blogPost .timeStamp .date {
+    font-size: 24px;
+    line-height: 1;
+    border-bottom: 1px solid #e8e8e8;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+}
+
+.blogPost>.btn {
+    vertical-align: top;
+    min-width: 123px;
+}
+
+.font-lato {
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+div.aligncenter {
+    margin: 0 auto 1.2em;
+}
+/* postActionsInfo styles */
+
+.postActionsInfo {
+    margin-bottom: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.postActionsInfo>li {
+    font-size: 9px;
+    line-height: 1.11111;
+    margin-right: 8px;
+}
+
+.postActionsInfo>li>a {
+    color: inherit;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.postActionsInfo>li>a:hover {
+    color: #222222;
+}
+
+.postActionsInfo .icn {
+    margin-right: 5px;
+}
+.element-block {
+    display: block;
+}
+.fw-normal {
+    font-weight: 400;
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active {
+    color:#fff;
+    background-color: #f16101;
+   
+    border-color: #ffc000;
+}
+.btn {
+    font-size: 12px;
+    border-width: 2px;
+    color: #fff;
+    background-color: #012237;
+}
+.blogPost .image:hover img{
+    transform: scale(1.01);
+}
+.blogPost h1 a:hover{
+    color: darkblue;
+   
+}
+.blogPost a{
+    text-decoration: none;
+    color: black;
+}

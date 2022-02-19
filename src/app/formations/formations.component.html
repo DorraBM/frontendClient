@@ -1,0 +1,118 @@
+<!-- /.inner-banner -->
+<section class="inner-banner">
+    <div class="container">
+       
+        <!-- /.list-unstyled -->
+        <h2 class="inner-banner__title">Cours</h2>
+        <!-- /.inner-banner__title -->
+    </div>
+    <!-- /.container -->
+</section>
+
+
+<div id="two-columns" class="container">
+    <div class="row">
+        <!--formations list-->
+        <div id="content" class="col-xs-12 col-md-9">
+            <section class="course-one course-page container">
+                
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-lg-6" *ngFor="let f of formationData | paginate: { itemsPerPage: 4, currentPage: page } ">
+                            <a [routerLink]=" [ '/formation',f.idFormation] " style=" text-decoration: none; ">
+                                <div class="item ">
+                                    <div class="course-one__single color-1">
+                                        
+                                        <div class="course-one__image">
+                                            <img [src]="f.image" alt="">
+                                        </div>
+                                        <div class="course-one__content">
+                                            <span class="course-one__category">    {{f.categorieFormation}}</span>
+                                            <div class="course-one__admin ">
+                                                <div *ngFor="let i of instructorData;index as ind">
+                                                    <ng-container *ngIf="i.idInstructor == f.idInstructor">
+                                                       
+                                                            <img *ngIf="i.imageInstructor" [src]=" instructorData[ind].imageInstructor" alt=" "
+                                                                style="height: 35px; width: 35px;" class="rounded-circle" />
+                                                       
+                                                            <img *ngIf="!i.imageInstructor" src="assets/images/photoProfil.png" alt=" "
+                                                                style="height: 35px; width: 35px;" class="rounded-circle" />
+                                                        
+                                                        by {{i.nomInstructor}}
+                                                    </ng-container>
+                                                </div>
+                                            </div>
+                                            <h2 class="course-one__title"><a>{{f.titreFormation}}</a></h2>
+                                            <div class="course-one__stars">
+                                                <span class="course-one__stars-wrap">
+                                                    <ngb-rating id="star" [max]=5 [rate]="f.nbEtoiles" [readonly]="true">
+                                                    </ngb-rating>
+                                                </span>
+                                                <span class="course-one__count">4.8</span>
+                                                <span class="course-one__stars-count">
+                                                    <i class="fa fa-user-o" aria-hidden="true"></i>
+                                                    {{f.nbParticipant}}+
+                                                </span>
+                                            </div>
+                                            <div class="course-one__meta">
+                                                <i class="far fa-clock"></i><span>{{f.dureeHeure}}
+                                                    Heures</span> 
+                                                <i class="far fa-folder-open"></i>
+                                                {{f.dureeSemaine}} Semaine
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- /.col-lg-4 -->
+                    </div>
+                    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+                <!-- /.container -->
+            </section>
+
+        </div>
+        <!--sidebar-->
+        <div class="col-xs-12 col-md-3" id="sidebar">
+            <!-- widget categories -->
+            <section class="widget widget_categories">
+                <h3>CATÉGORIES DE COURS</h3>
+                <ul class="list-unstyled text-capitalize font-lato">
+
+                    <li *ngFor="let c of categorieData" >
+                        <a href="" (click)="getcategorie(c.nomCategorie)">{{c.nomCategorie}}</a>
+                        
+                    </li>
+                  
+                </ul>
+            </section>
+            <!-- widget popular posts -->
+            <section class="widget widget_popular_posts">
+                <h3>COURS POPULAIRES</h3>
+                <!-- widget cources list -->
+                <ul class="widget-cources-list list-unstyled">
+                    <ng-container *ngFor="let p of formationData ">
+                        <li *ngIf="p.populaire==1">
+                            <a [routerLink]=" [ '/formation',p.idFormation]">
+                                <div class=" alignleft large ">
+                                    <img [src]="p.image " alt="image description ">
+                                </div>
+                                <div class="description-wrap ">
+                                    <h4>{{p.titreFormation}}</h4>
+                                    <div class="course-one__stars ">
+                                        <span class="course-one__stars-wrap">
+                                            <ngb-rating id="star" [max]=5 [rate]="p.nbEtoiles">
+                                            </ngb-rating>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                            <!--<strong class="price text-primary element-block font-lato text-uppercase ">
+                                {{formationData[0].prixFormation}}DT
+                            </strong>-->
+                        </li>
+                    </ng-container>
+                </ul>
+            </section>
+        </div>
+    </div>
+</div>

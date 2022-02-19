@@ -1,0 +1,726 @@
+<app-caroussel></app-caroussel>
+<section class="course-one__top-title home-one">
+    <div class="container">
+        <div class="block-title mb-0">
+            <h2 class="block-title__title">Découvrez nos <br>cours populaires</h2>
+        </div>
+    </div>
+    <div class="course-one__top-title__curve"></div>
+</section>
+<!--Carousel Wrapper-->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h3 class="mb-3">Nos Formations </h3>
+            </div>
+            <div class="col-6 text-right">
+                <a class="btn btn-primary  mr-2" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                    <i class="fa fa-arrow-left"></i>
+                </a>
+                <a class="btn btn-primary  " href="#carouselExampleIndicators2" role="button" data-slide="next">
+                    <i class="fa fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="col-12">
+                <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner ">
+                        <div class="carousel-item active">
+                            <div class="row course-one">
+                                <div class="col-md-4 mb-3">
+                                    <a [routerLink]=" [ '/formation',formationData[0].idFormation] "
+                                        style=" text-decoration: none; " (click)="topFunction()">
+                                        <div class="item ">
+                                            <div class="course-one__single color-1">
+                                                <div class="course-one__image">
+                                                    <img [src]="formationData[0].image" alt="image formation">
+                                                </div>
+                                                <div class="course-one__content">
+                                                    <span class="course-one__category">
+                                                        {{formationData[0].categorieFormation}}</span>
+                                                    <div class="course-one__admin ">
+                                                        <div *ngFor="let i of instructorData;index as ind">
+                                                            <ng-container
+                                                                *ngIf="i.idInstructor == formationData[0].idInstructor">
+                                                                <img [src]=" instructorData[ind].imageInstructor"
+                                                                    alt="image formateur "
+                                                                    style="height: 35px; width: 35px;"
+                                                                    class="rounded-circle" />
+                                                                by {{instructorData[ind].nomInstructor}}
+                                                            </ng-container>
+                                                        </div>
+                                                    </div>
+                                                    <h2 class="course-one__title">
+                                                        <a>{{formationData[0].titreFormation}}</a>
+                                                    </h2>
+                                                    <div class="course-one__stars">
+                                                        <span class="course-one__stars-wrap">
+                                                            <ngb-rating id="star" [max]=5
+                                                                [rate]="formationData[0].nbEtoiles" [readonly]="true">
+                                                            </ngb-rating>
+                                                        </span>
+                                                        <span class="course-one__count">4.8</span>
+                                                        <span class="course-one__stars-count">
+                                                            <i class="fa fa-user-o" aria-hidden="true"></i>
+                                                            {{formationData[0].nbParticipant}}+
+                                                        </span>
+                                                    </div>
+                                                    <div class="course-one__meta">
+                                                        <i class="far fa-clock"></i> {{formationData[0].dureeHeure}}
+                                                        Heures
+                                                        <i class="far fa-folder-open"></i>
+                                                        {{formationData[0].dureeSemaine}} Semaine
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <a [routerLink]=" [ '/formation',formationData[1].idFormation] "
+                                        style=" text-decoration: none; " (click)="topFunction()">
+                                        <div class="item">
+                                            <div class="course-one__single color-1">
+                                                <div class="course-one__image">
+                                                    <img [src]="formationData[1].image" alt="image formation">
+                                                </div>
+                                                <div class="course-one__content">
+                                                    <span class="course-one__category">
+                                                        {{formationData[1].categorieFormation}}</span>
+                                                    <div class="course-one__admin ">
+                                                        <div *ngFor="let i of instructorData;index as ind">
+                                                            <ng-container
+                                                                *ngIf="i.idInstructor == formationData[1].idInstructor">
+                                                                <img *ngIf="i.imageInstructor" [src]=" instructorData[ind].imageInstructor" alt=" "
+                                                                style="height: 35px; width: 35px;" class="rounded-circle" />
+                                                       
+                                                            <img *ngIf="!i.imageInstructor" src="assets/images/photoProfil.png" alt=" "
+                                                                style="height: 35px; width: 35px;" class="rounded-circle" />
+                                                                by {{i.nomInstructor}}
+                                                            </ng-container>
+                                                        </div>
+                                                    </div>
+                                                    <h2 class="course-one__title">
+                                                        <a>{{formationData[1].titreFormation}}</a>
+                                                    </h2>
+                                                    <div class="course-one__stars">
+                                                        <span class="course-one__stars-wrap">
+                                                            <ngb-rating id="star" [max]=5
+                                                                [rate]="formationData[2].nbEtoiles" [readonly]="true">
+                                                            </ngb-rating>
+                                                        </span>
+                                                        <span class="course-one__count">4.8</span>
+                                                        <span class="course-one__stars-count">
+                                                            <i class="fa fa-user-o" aria-hidden="true"></i>
+                                                            {{formationData[1].nbParticipant}}+
+                                                        </span>
+                                                    </div>
+                                                    <div class="course-one__meta">
+                                                        <i class="far fa-clock"></i> {{formationData[1].dureeHeure}}
+                                                        Heures
+                                                        <i class="far fa-folder-open"></i>
+                                                        {{formationData[1].dureeSemaine}} Semaine
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <a [routerLink]=" [ '/formation',formationData[2].idFormation] "
+                                        style=" text-decoration: none; " (click)="topFunction()">
+                                        <div class="item">
+                                            <div class="course-one__single color-1">
+                                                <div class="course-one__image">
+                                                    <img [src]="formationData[2].image" alt="image formation">
+                                                </div>
+                                                <div class="course-one__content">
+                                                    <span class="course-one__category">
+                                                        {{formationData[2].categorieFormation}}</span>
+                                                    <div class="course-one__admin ">
+                                                        <div *ngFor="let i of instructorData;index as ind">
+                                                            <ng-container
+                                                                *ngIf="i.idInstructor == formationData[2].idInstructor">
+                                                                <img *ngIf="i.imageInstructor" [src]=" i.imageInstructor" alt=" "
+                                                                style="height: 35px; width: 35px;" class="rounded-circle" />
+                                                       
+                                                            <img *ngIf="!i.imageInstructor" src="assets/images/photoProfil.png" alt=" "
+                                                                style="height: 35px; width: 35px;" class="rounded-circle" />
+                                                                by {{i.nomInstructor}}
+                                                            </ng-container>
+                                                        </div>
+                                                    </div>
+                                                    <h2 class="course-one__title">
+                                                        <a>{{formationData[2].titreFormation}}</a>
+                                                    </h2>
+                                                    <div class="course-one__stars">
+                                                        <span class="course-one__stars-wrap">
+                                                            <ngb-rating id="star" [max]=5
+                                                                [rate]="formationData[2].nbEtoiles" [readonly]="true">
+                                                            </ngb-rating>
+                                                        </span>
+                                                        <span class="course-one__count">4.8</span>
+                                                        <span class="course-one__stars-count">
+                                                            <i class="fa fa-user-o" aria-hidden="true"></i>
+                                                            {{formationData[2].nbParticipant}}+
+                                                        </span>
+                                                    </div>
+                                                    <div class="course-one__meta">
+                                                        <i class="far fa-clock"></i> {{formationData[2].dureeHeure}}
+                                                        Heures
+                                                        <i class="far fa-folder-open"></i>
+                                                        {{formationData[2].dureeSemaine}} Semaine
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row course-one">
+
+                                <div class="col-md-4 mb-3">
+                                    <a [routerLink]=" [ '/formation',formationData[3].idFormation] "
+                                        style=" text-decoration: none; " (click)="topFunction()">
+                                        <div class="item">
+                                            <div class="course-one__single color-1">
+                                                <div class="course-one__image">
+                                                    <img [src]="formationData[3].image" alt="image formation">
+                                                </div>
+                                                <div class="course-one__content">
+                                                    <span class="course-one__category">
+                                                        {{formationData[3].categorieFormation}}</span>
+                                                    <div class="course-one__admin ">
+                                                        <div *ngFor="let i of instructorData;index as ind">
+                                                            <ng-container
+                                                                *ngIf="i.idInstructor == formationData[3].idInstructor">
+                                                                <img *ngIf="i.imageInstructor" [src]=" instructorData[ind].imageInstructor" alt=" "
+                                                                style="height: 35px; width: 35px;" class="rounded-circle" />
+                                                       
+                                                            <img *ngIf="!i.imageInstructor" src="assets/images/photoProfil.png" alt=" "
+                                                                style="height: 35px; width: 35px;" class="rounded-circle" />
+                                                                by {{instructorData[ind].nomInstructor}}
+                                                            </ng-container>
+                                                        </div>
+                                                    </div>
+                                                    <h2 class="course-one__title">
+                                                        <a>{{formationData[3].titreFormation}}</a>
+                                                    </h2>
+                                                    <div class="course-one__stars">
+                                                        <span class="course-one__stars-wrap">
+                                                            <ngb-rating id="star" [max]=5
+                                                                [rate]="formationData[3].nbEtoiles" [readonly]="true"> </ngb-rating>
+                                                        </span>
+                                                        <span class="course-one__count">4.8</span>
+                                                        <span class="course-one__stars-count">
+                                                            <i class="fa fa-user-o" aria-hidden="true"></i>
+                                                            {{formationData[3].nbParticipant}}+
+                                                        </span>
+                                                    </div>
+                                                    <div class="course-one__meta">
+                                                        <i class="far fa-clock"></i> {{formationData[3].dureeHeure}}
+                                                        Heures
+                                                        <i class="far fa-folder-open"></i>
+                                                        {{formationData[3].dureeSemaine}} Semaine
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <a [routerLink]=" [ '/formation',formationData[4].idFormation] "
+                                        style=" text-decoration: none; " (click)="topFunction()">
+                                        <div class="item">
+                                            <div class="course-one__single color-1">
+                                                <div class="course-one__image">
+                                                    <img [src]="formationData[4].image" alt="image formation">
+                                                </div>
+                                                <div class="course-one__content">
+                                                    <span class="course-one__category">
+                                                        {{formationData[4].categorieFormation}}</span>
+                                                    <div class="course-one__admin ">
+                                                        <div *ngFor="let i of instructorData;index as ind">
+                                                            <ng-container
+                                                                *ngIf="i.idInstructor == formationData[4].idInstructor">
+                                                                <img *ngIf="i.imageInstructor" [src]=" instructorData[ind].imageInstructor" alt=" "
+                                                                style="height: 35px; width: 35px;" class="rounded-circle" />
+                                                       
+                                                            <img *ngIf="!i.imageInstructor" src="assets/images/photoProfil.png" alt=" "
+                                                                style="height: 35px; width: 35px;" class="rounded-circle" />
+                                                                by {{instructorData[ind].nomInstructor}}
+                                                            </ng-container>
+                                                        </div>
+                                                    </div>
+                                                    <h2 class="course-one__title">
+                                                        <a>{{formationData[4].titreFormation}}</a>
+                                                    </h2>
+                                                    <div class="course-one__stars">
+                                                        <span class="course-one__stars-wrap">
+                                                            <ngb-rating id="star" [max]=5
+                                                                [rate]="formationData[4].nbEtoiles" [readonly]="true"></ngb-rating>
+                                                        </span>
+                                                        <span class="course-one__count">4.8</span>
+                                                        <span class="course-one__stars-count">
+                                                            <i class="fa fa-user-o" aria-hidden="true"></i>
+                                                            {{formationData[4].nbParticipant}}+
+                                                        </span>
+                                                    </div>
+                                                    <div class="course-one__meta">
+                                                        <i class="far fa-clock"></i> {{formationData[4].dureeHeure}}
+                                                        Heures
+                                                        <i class="far fa-folder-open"></i>
+                                                        {{formationData[4].dureeSemaine}} Semaine
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <a [routerLink]=" [ '/formation',formationData[5].idFormation] "
+                                        style=" text-decoration: none; " (click)="topFunction()">
+                                        <div class="item">
+                                            <div class="course-one__single color-1">
+                                                <div class="course-one__image">
+                                                    <img [src]="formationData[5].image" alt="image formation">
+                                                </div>
+                                                <div class="course-one__content">
+                                                    <span class="course-one__category">
+                                                        {{formationData[5].categorieFormation}}</span>
+                                                    <div class="course-one__admin ">
+                                                        <div *ngFor="let i of instructorData;index as ind">
+                                                            <ng-container
+                                                                *ngIf="i.idInstructor == formationData[5].idInstructor">
+                                                                <img *ngIf="i.imageInstructor" [src]=" instructorData[ind].imageInstructor" alt=" "
+                                                                style="height: 35px; width: 35px;" class="rounded-circle" />
+                                                       
+                                                            <img *ngIf="!i.imageInstructor" src="assets/images/photoProfil.png" alt=" "
+                                                                style="height: 35px; width: 35px;" class="rounded-circle" />
+                                                                by {{instructorData[ind].nomInstructor}}
+                                                            </ng-container>
+                                                        </div>
+                                                    </div>
+                                                    <h2 class="course-one__title">
+                                                        <a>{{formationData[5].titreFormation}}</a>
+                                                    </h2>
+                                                    <div class="course-one__stars">
+                                                        <span class="course-one__stars-wrap">
+                                                            <ngb-rating id="star" [max]=5
+                                                                [rate]="formationData[5].nbEtoiles" [readonly]="true"> </ngb-rating>
+                                                        </span>
+                                                        <span class="course-one__count">4.8</span>
+                                                        <span class="course-one__stars-count">
+                                                            <i class="fa fa-user-o" aria-hidden="true"></i>
+                                                            {{formationData[5].nbParticipant}}+
+                                                        </span>
+                                                    </div>
+                                                    <div class="course-one__meta">
+                                                        <i class="far fa-clock"></i> {{formationData[5].dureeHeure}}
+                                                        Heures
+                                                        <i class="far fa-folder-open"></i>
+                                                        {{formationData[5].dureeSemaine}} Semaine
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row course-one">
+
+                                <div class="col-md-4 mb-3">
+                                    <a [routerLink]=" [ '/formation',formationData[6].idFormation] "
+                                        style=" text-decoration: none; " (click)="topFunction()">
+                                        <div class="item">
+                                            <div class="course-one__single color-1">
+                                                <div class="course-one__image">
+                                                    <!--<img [src]="formationData[6].image" alt="image formation">-->
+                                                    <img src="assets/images/MD.png" alt="image formation">
+                                                </div>
+                                                <div class="course-one__content">
+                                                    <span class="course-one__category">
+                                                        {{formationData[6].categorieFormation}}</span>
+                                                    <div class="course-one__admin ">
+                                                        <div *ngFor="let i of instructorData;index as ind">
+                                                            <ng-container
+                                                                *ngIf="i.idInstructor == formationData[6].idInstructor">
+                                                                <img *ngIf="i.imageInstructor" [src]=" instructorData[ind].imageInstructor" alt=" "
+                                                                style="height: 35px; width: 35px;" class="rounded-circle" />
+                                                       
+                                                            <img *ngIf="!i.imageInstructor" src="assets/images/photoProfil.png" alt=" "
+                                                                style="height: 35px; width: 35px;" class="rounded-circle" />
+                                                                by {{instructorData[ind].nomInstructor}}
+                                                            </ng-container>
+                                                        </div>
+                                                    </div>
+                                                    <h2 class="course-one__title">
+                                                        <a>{{formationData[6].titreFormation}}</a></h2>
+                                                    <div class="course-one__stars">
+                                                        <span class="course-one__stars-wrap">
+                                                            <ngb-rating id="star" [max]=5
+                                                                [rate]="formationData[6].nbEtoiles" [readonly]="true"> </ngb-rating>
+                                                        </span>
+                                                        <span class="course-one__count">4.8</span>
+                                                        <span class="course-one__stars-count">
+                                                            <i class="fa fa-user-o" aria-hidden="true"></i>
+                                                            {{formationData[6].nbParticipant}}+
+                                                        </span>
+                                                    </div>
+                                                    <div class="course-one__meta">
+                                                        <i class="far fa-clock"></i> {{formationData[6].dureeHeure}}
+                                                        Heures
+                                                        <i class="far fa-folder-open"></i>
+                                                        {{formationData[6].dureeSemaine}} Semaine
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <a [routerLink]=" [ '/formation',formationData[7].idFormation] "
+                                        style=" text-decoration: none; " (click)="topFunction()">
+                                        <div class="item">
+                                            <div class="course-one__single color-1">
+                                                <div class="course-one__image">
+                                                    <img [src]="formationData[7].image" alt="image formation">
+                                                </div>
+                                                <div class="course-one__content">
+                                                    <span class="course-one__category">
+                                                        {{formationData[7].categorieFormation}}</span>
+                                                    <div class="course-one__admin ">
+                                                        <div *ngFor="let i of instructorData;index as ind">
+                                                            <ng-container
+                                                                *ngIf="i.idInstructor == formationData[7].idInstructor">
+                                                                <img *ngIf="i.imageInstructor" [src]=" instructorData[ind].imageInstructor" alt=" "
+                                                                style="height: 35px; width: 35px;" class="rounded-circle" />
+                                                       
+                                                            <img *ngIf="!i.imageInstructor" src="assets/images/photoProfil.png" alt=" "
+                                                                style="height: 35px; width: 35px;" class="rounded-circle" />
+                                                                by {{instructorData[ind].nomInstructor}}
+                                                            </ng-container>
+                                                        </div>
+                                                    </div>
+                                                    <h2 class="course-one__title">
+                                                        <a>{{formationData[7].titreFormation}}</a></h2>
+                                                    <div class="course-one__stars">
+                                                        <span class="course-one__stars-wrap">
+                                                            <ngb-rating id="star" [max]=5
+                                                                [rate]="formationData[7].nbEtoiles" [readonly]="true">
+                                                            </ngb-rating>
+                                                        </span>
+                                                        <span class="course-one__count">4.8</span>
+                                                        <span class="course-one__stars-count">
+                                                            <i class="fa fa-user-o" aria-hidden="true"></i>
+                                                            {{formationData[7].nbParticipant}}+
+                                                        </span>
+                                                    </div>
+                                                    <div class="course-one__meta">
+                                                        <i class="far fa-clock"></i> {{formationData[7].dureeHeure}}
+                                                        Heures
+                                                        <i class="far fa-folder-open"></i>
+                                                        {{formationData[7].dureeSemaine}} Semaine
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <a [routerLink]=" [ '/formation',formationData[8].idFormation] "
+                                        style=" text-decoration: none; " (click)="topFunction()">
+                                        <div class="item">
+                                            <div class="course-one__single color-1">
+                                                <div class="course-one__image">
+                                                    <img [src]="formationData[8].image" alt="image formation">
+                                                </div>
+                                                <div class="course-one__content">
+                                                    <span class="course-one__category">
+                                                        {{formationData[8].categorieFormation}}</span>
+                                                    <div class="course-one__admin ">
+                                                        <div *ngFor="let i of instructorData;index as ind">
+                                                            <ng-container
+                                                                *ngIf="i.idInstructor == formationData[8].idInstructor">
+                                                                <img *ngIf="i.imageInstructor" [src]=" instructorData[ind].imageInstructor" alt=" "
+                                                                style="height: 35px; width: 35px;" class="rounded-circle" />
+                                                       
+                                                            <img *ngIf="!i.imageInstructor" src="assets/images/photoProfil.png" alt=" "
+                                                                style="height: 35px; width: 35px;" class="rounded-circle" />
+                                                                by {{instructorData[ind].nomInstructor}}
+                                                            </ng-container>
+                                                        </div>
+                                                    </div>
+                                                    <h2 class="course-one__title">
+                                                        <a>{{formationData[8].titreFormation}}</a> </h2>
+                                                    <div class="course-one__stars">
+                                                        <span class="course-one__stars-wrap">
+                                                            <ngb-rating id="star" [max]=5
+                                                                [rate]="formationData[8].nbEtoiles" [readonly]="true"></ngb-rating>
+                                                        </span>
+                                                        <span class="course-one__count">4.8</span>
+                                                        <span class="course-one__stars-count">
+                                                            <i class="fa fa-user-o" aria-hidden="true"></i>
+                                                            {{formationData[8].nbParticipant}}+
+                                                        </span>
+                                                    </div>
+                                                    <div class="course-one__meta">
+                                                        <i class="far fa-clock"></i> {{formationData[8].dureeHeure}}
+                                                        Heures
+                                                        <i class="far fa-folder-open"></i>
+                                                        {{formationData[8].dureeSemaine}} Semaine
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a routerLink="/formations" class="thm-btn1" (click)="topFunction()">
+        Voir Plus De Formations
+        <i class="fas fa-angle-double-right"></i>
+    </a>
+</section>
+<!-- counter aside -->
+<aside class="bg-cover counter-aside "
+    style="background-image: url(https://st2.depositphotos.com/3591429/9019/i/600/depositphotos_90190112-stock-photo-business-team-during-discussion-strategy.jpg); ">
+    <div class="container align-wrap ">
+        <div class="align ">
+            <div class="row ">
+                <div class="col-xs-12 col-sm-3 col ">
+                    <h2 class="counter-aside-heading ">
+                        <strong class="countdown element-block ">150</strong>
+                        <strong class="text element-block ">COUNTRIES REACHED</strong>
+                    </h2>
+                </div>
+                <div class="col-xs-12 col-sm-3 col ">
+                    <h2 class="counter-aside-heading ">
+                        <strong class="countdown element-block ">28000</strong>
+                        <strong class="text element-block ">PASSED GRADUATES</strong>
+                    </h2>
+                </div>
+                <div class="col-xs-12 col-sm-3 col ">
+                    <h2 class="counter-aside-heading ">
+                        <strong class="countdown element-block ">750</strong>
+                        <strong class="text element-block ">QUALIFIED STAFF</strong>
+                    </h2>
+                </div>
+                <div class="col-xs-12 col-sm-3 col ">
+                    <h2 class="counter-aside-heading ">
+                        <strong class="countdown element-block ">1200</strong>
+                        <strong class="text element-block ">COURSES PUBLISHED</strong>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+<!-- Atteigner votre objectif -->
+<section class="container how-work-block text-center ">
+    <header class="seperator-head ">
+        <h2>Atteigner votre objectif</h2>
+    </header>
+    <div class="row ">
+        <div class="col ">
+            <div class="guide-column ">
+                <span class="icn-wrap ">
+                    <i class="far fa-user icn "></i>
+                </span>
+                <h3>1.Become a Member</h3>
+                <p>We choose to go to the moon in this decade and the other.</p>
+            </div>
+        </div>
+        <div class="col ">
+            <div class="guide-column ">
+                <span class="icn-wrap ">
+                    <i class="far fa-question-circle icn "></i>
+                </span>
+                <h3>2.Learn by Doing</h3>
+                <p>We choose to go to the moon in this decade and the other.</p>
+            </div>
+        </div>
+        <div class="col ">
+            <div class="guide-column ">
+                <span class="icn-wrap ">
+                    <i class="fas fa-book icn "></i>
+                </span>
+                <h3>3.Preview the Syllabus</h3>
+                <p>We choose to go to the moon in this decade and the other.</p>
+            </div>
+        </div>
+        <div class="col ">
+            <div class="guide-column ">
+                <span class="icn-wrap ">
+                    <i class="far fa-thumbs-up icn "></i>
+                </span>
+                <h3>4.Take a Course</h3>
+                <p>We choose to go to the moon in this decade and the other.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--formulaire-->
+<div class="cta-two ">
+    <div class="container-fluid ">
+        <div class="row no-gutters ">
+            <div class="col-6 thm-base-bg ">
+                <div class="cta-two__single ">
+                    <div class="cta-two__icon ">
+                        <span>
+                            <img
+                                src="https://img.icons8.com/external-icongeek26-outline-gradient-icongeek26/64/000000/external-teacher-education-icongeek26-outline-gradient-icongeek26.png " />
+                        </span>
+                    </div>
+                    <div class="cta-two__content ">
+                        <h2 class="cta-two__title ">
+                            Devenir Instructeur ?
+                        </h2>
+                        <p class="cta-two__text ">
+                            Rejoignez des milliers d'instructeurs et gagnez de l'argent sans tracas !
+                        </p>
+                        <button type="button" class=" thm-btn cta-two__btn" data-toggle="modal"
+                            data-target="#exampleModal">
+                            Commencer à enseigné
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 thm-base-bg-2 ">
+                <div class="cta-two__single ">
+                    <div class="cta-two__icon ">
+                        <span>
+                            <img src="https://img.icons8.com/nolan/64/knowledge-sharing.png " />
+                        </span>
+                    </div>
+                    <div class="cta-two__content ">
+                        <h2 class="cta-two__title ">
+                            Inscrivez-vous
+                        </h2>
+                        <p class="cta-two__text ">
+                            Un de nos conseillers vous contactera au plus vite
+                        </p>
+                        <a routerLink="/inscription" class="thm-btn cta-two__btn " (click)="topFunction()">
+                            Commencer à apprendre
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<section class="testimonials-block text-center bg-gray "
+    style="background-image: url(assets/images/bg-pattern01.png); ">
+    <div class="container ">
+        <div class="row ">
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 ">
+                <h2>What People Say</h2>
+                <div class="slick-slider slider testimonail-slider ">
+                    <mdb-carousel *ngIf="commentData">
+                        <mdb-carousel-item ngbSlide *ngFor="let c of commentData">
+                            <blockquote class="testimonial-quote font-roboto ">
+                                <cite class="element-block font-lato ">
+                                    <p>
+                                        {{c.Comment}}
+                                    </p>
+                                    <strong class="element-block h5 h ">
+                                        {{c.nomPersonne}}
+                                    </strong>
+                                    <span class="avatar rounded-circle element-block ">
+                                        <img class="rounded-circle " src="http://placehold.it/65x65 "
+                                            alt="Nethor Doct -Developer ">
+                                    </span>
+                                </cite>
+                            </blockquote>
+                        </mdb-carousel-item>
+                    </mdb-carousel>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>-->
+<!-- Modal -->
+<div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" style="margin-left: 150px;" id="exampleModalLabel">
+                    Devenir Instructeur
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-center">
+                                Remplir le Formulaire
+                            </h2>
+                            <form [formGroup]="instructorForm" method="POST" enctype="multipart/form-data">
+                                <div class="mb-1 row">
+                                    <label for="staticEmail" class="col-sm-5 col-form-label">Nom:</label>
+                                    <div class="col-sm-7">
+                                        <input type="text" class="form-control" formControlName="nomFormateur">
+                                    </div>
+                                </div>
+                                <div class="mb-1 row">
+                                    <label for="staticEmail" class="col-sm-5 col-form-label">Numero Tel:</label>
+                                    <div class="col-sm-7">
+                                        <input type="text" class="form-control" formControlName="TelFormateur">
+                                    </div>
+                                </div>
+                                <div class="mb-1 row">
+                                    <label for="staticEmail" class="col-sm-5 col-form-label">Email:</label>
+                                    <div class="col-sm-7">
+                                        <input type="text" class="form-control" formControlName="emailFormateur">
+                                    </div>
+                                </div>
+                                <div class="mb-1 row">
+                                    <label for="staticEmail" class="col-sm-5 col-form-label">Categorie de
+                                        formation/Titre Formation:</label>
+                                    <div class="col-sm-7">
+                                        <input type="text" class="form-control" formControlName="categorieFormateur">
+                                    </div>
+                                </div>
+                                <div class="mb-1 row">
+                                    <label for="staticEmail" class="col-sm-5 col-form-label">Photo de profil:</label>
+                                    <div class="col-sm-7">
+                                        <input type="file" class="form-control" name="imageFormateur" accept="image/*"
+                                            formControlName="imageFormateur">
+                                    </div>
+                                </div>
+                                <div class="mb-1 row">
+                                    <label for="staticEmail" class="col-sm-5 col-form-label">Votre CV:</label>
+                                    <div class="col-sm-7">
+                                        <input type="file" class="form-control" name="cvFormateur"
+                                            formControlName="cvFormateur">
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Close</button>
+                <button type="submit" class="btn btn-primary" (click)="onSubmit()">Inscription</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+<div id="container" class="bg-image">
+    <section class=" gradient-form py-5 h-500" id="login">
+        <div class="d-flex justify-content-center">
+            <div class="card  cards rounded-3 text-white  text-center cardStyle">
+                <div class="card-container">
+                    <div class="front text-center">
+                        <h3>Master Class</h3>
+                    </div>
+                    <div class="card-formulaire">
+                        <h4>Rejoigner-nous</h4>
+                        <form action="" [formGroup]="etudiantForm" (ngSubmit)="onSubmit()">
+                            <div class="inputBox ">
+                                <span>Nom:</span>
+                                <input type="text" class="form-control" formControlName="nomEtudiant">
+                            </div>
+                            <div class="inputBox">
+                                <span>Prenom:</span>
+                                <input type="text" class="form-control" formControlName="prenomEtudiant">
+                            </div>
+                            <div class="inputBox">
+                                <span>N°Tel: </span>
+                                <input type="text" class="form-control" formControlName="numeroTelEtudiant">
+                            </div>
+                            <div class="inputBox">
+                                <span>EMAIL:</span>
+                                <input type="text" class="form-control" formControlName="emailEtudiant">
+                            </div>
+
+                            <div class="flexbox">
+                                <div class="inputBox">
+                                    <span>Formation:</span>
+                                    <select name="categorieOption " formControlName="nomCategorie">
+                                        <option [value]="c.nomCategorie " *ngFor="let c of categories ">
+                                            {{c.nomCategorie}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <br>
+                            <div>
+                                <button class="btn btn-primary">Envoyer</button>
+                            </div>
+                        </form>
+                        <div *ngIf="successMessage" class="alert alert-warning alert-dismissible fade show" role="alert">
+                            {{successMessage}}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        <div *ngIf="errorMessage" class="alert alert-warning alert-dismissible fade show" role="alert">
+                            {{errorMessage}}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

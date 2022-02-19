@@ -1,0 +1,38 @@
+<!-- /.inner-banner -->
+<section class="inner-banner">
+    <div class="container">
+      
+        <!-- /.list-unstyled -->
+        <h2 class="inner-banner__title">BLOGS</h2>
+        <!-- /.inner-banner__title -->
+    </div>
+    <!-- /.container -->
+</section>
+
+<div class="row">
+  
+    <section>
+        <article class="blogPost col-xs-12 col-md-12" *ngFor="let b of blogData">
+            <time datetime="2011-01-12" class="timeStamp font-lato text-center text-uppercase">
+                <strong class="date fw-normal element-block">{{b.dateBlog |date :'dd'}}</strong>
+                <span class="element-block">{{b.dateBlog |date :'MMM'}}</span>
+                <span class="element-block">{{b.dateBlog |date :'YYYY'}}</span>
+            </time>
+            <div class="aligncenter image">
+                <img [src]="b.imageBlog"  style="height: 748; width: 430;" alt="image description">
+            </div>
+            <h1><a href="">{{b.titreBlog}}</a></h1>
+            <!-- postActionsInfo -->
+            <ul class="list-unstyled postActionsInfo text-uppercase">
+                <li><a href="#"><i class="far fa-user icn"></i> by {{b.auteurBlog}}</a></li>
+                <li><a href="#"><i class="far fa-folder icn"></i>{{b.categorieBlog}}</a></li>
+               
+            </ul>
+            <div class="description">
+                <p>{{b.descriptionBlog}}</p>
+                <a [routerLink]="['/blog',b.idBlog]" class="btn btn-default text-uppercase" (click)="topFunction()">Read More</a>
+            </div>
+        </article>
+    </section>
+   
+</div>
